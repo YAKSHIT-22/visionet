@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
 import login from '@/app/assets/login.svg'
+import { FcGoogle } from 'react-icons/fc'
+
 const page = () => {
   return (
     <section className="w-screen min-h-screen md:h-screen  flex items-center justify-center bg-white">
       <div className="w-full h-full flex items-center max-w-screen-2xl mx-auto justify-center p-4">
-        <div className="w-full text-black h-full flex items-center justify-center flex-col-reverse md:flex-row p-4 gap-[2rem] lg:gap-[6rem]">
-            <div className="w-full md:w-[50%] h-full flex items-center justify-center p-2 md:p-4 flex-col gap-[2rem]">
-              <div className="w-full lg:w-[80%] h-full flex items-start justify-center p-2 md:p-4 flex-col gap-[2rem]">
+        <div className="w-full text-black h-full flex items-center justify-center flex-col-reverse md:flex-row p-4 gap-[2rem] lg:gap-[14rem]">
+            <div className="w-full md:w-[50%] h-full flex items-center md:items-end justify-center p-2 md:p-4 flex-col gap-[2rem]">
+              <div className="w-full lg:w-[85%] h-full flex items-center justify-center p-2 md:p-4 flex-col gap-[2rem]">
               <div className="w-full flex items-start justify-center flex-col gap-[1rem] select-none">
                 <h1 className="w-full font-bold text-4xl lg:text-5xl">Welcome Back!</h1>
                 <p className="w-full font-normal text-lg lg:text-xl">Today is a new day. It's your day. You shape it. Sign in to start managing your projects.</p>
@@ -32,7 +34,7 @@ const page = () => {
                   <span className="w-12 h-[2px] bg-[#CFDFE2] rounded-full"></span>
                 </div>
                 <div className="w-full h-full flex items-center justify-center">
-                  <button className="bg-[#F3F9FA] text-[#313957] px-12 rounded-md py-4 w-full flex items-center justify-center text-base">Sign in with Google</button>
+                  <button className="bg-[#F3F9FA] text-[#313957] px-12 rounded-md py-4 w-full flex items-center justify-center text-base">Sign in with Google<FcGoogle/></button>
                 </div>
               </div>
               </div>

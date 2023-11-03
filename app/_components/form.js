@@ -5,7 +5,7 @@ import login from "@/app/_assets/login.svg";
 import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
 import { useSearchParams, useRouter } from "next/navigation"; // Import Next.js navigation utilities.
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 export const Form = () => {
   const router = useRouter();
@@ -119,7 +119,7 @@ export const Form = () => {
             <div className="w-full h-full flex items-center justify-center">
               <button
                 type="submit"
-                onClick={() => signIn("google", { callbackUrl: "/" })}
+                onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
                 className="bg-[#F3F9FA] text-[#313957] px-12 rounded-md py-4 w-full flex items-center justify-center gap-2 text-base"
               >
                 <FcGoogle className="w-6 h-6" />

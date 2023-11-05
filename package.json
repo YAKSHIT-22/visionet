@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@syncfusion/ej2-barcode-generator": "^23.1.43",
     "framer": "^2.4.1",
     "mongoose": "^8.0.0",
     "next": "14.0.1",

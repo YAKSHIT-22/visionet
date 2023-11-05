@@ -65,15 +65,16 @@ export const Form = () => {
             </p>
           </div>
           <div className="w-full flex items-center justify-center flex-col gap-[1rem]">
+          {error && (
+                <p className="text-center bg-red-300 p-1 text-xs m-1 capitalize rounded">
+                  {error}
+                </p>
+              )}
             <form
               onSubmit={onSubmit}
               className="w-full h-full flex items-start justify-center flex-col gap-[2rem]"
             >
-              {error && (
-                <p className="text-center bg-red-300 py-4 mb-6 rounded">
-                  {error}
-                </p>
-              )}
+              
               <div className="flex items-center justify-center flex-col w-full gap-[1rem]">
                 <div className="w-full h-full flex items-start justify-center flex-col gap-2">
                   <label className="w-full text-base text-[#757575]">

@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
-import React from "react";
 import login from "@/app/_assets/login.svg";
-import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
-import { useSearchParams, useRouter } from "next/navigation"; // Import Next.js navigation utilities.
+import { useRouter, useSearchParams } from "next/navigation"; // Import Next.js navigation utilities.
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 export const Form = () => {
   const router = useRouter();
@@ -56,30 +54,23 @@ export const Form = () => {
       <div className="w-full md:w-[50%] h-full flex items-center md:items-end justify-center p-0 md:p-4 flex-col gap-[2rem]">
         <div className="w-full lg:w-[85%] h-full flex items-center justify-center p-0 md:p-4 flex-col gap-[2rem]">
           <div className="w-full flex items-start justify-center flex-col gap-[1rem] select-none">
-            <h1 className="w-full font-bold text-4xl lg:text-5xl">
-              Welcome Back!
-            </h1>
+            <h1 className="w-full font-bold text-4xl lg:text-5xl">Welcome Back!</h1>
             <p className="w-full font-normal text-lg lg:text-xl">
-              Today is a new day. It's your day. You shape it. Sign in to start
-              managing your projects.
+              Today is a new day. It's your day. You shape it. Sign in to start managing your
+              projects.
             </p>
           </div>
           <div className="w-full flex items-center justify-center flex-col gap-[1rem]">
-          {error && (
-                <p className="text-center bg-red-300 p-1 text-xs m-1 capitalize rounded">
-                  {error}
-                </p>
-              )}
+            {error && (
+              <p className="text-center bg-red-300 p-1 text-xs m-1 capitalize rounded">{error}</p>
+            )}
             <form
               onSubmit={onSubmit}
               className="w-full h-full flex items-start justify-center flex-col gap-[2rem]"
             >
-              
               <div className="flex items-center justify-center flex-col w-full gap-[1rem]">
                 <div className="w-full h-full flex items-start justify-center flex-col gap-2">
-                  <label className="w-full text-base text-[#757575]">
-                    Email
-                  </label>
+                  <label className="w-full text-base text-[#757575]">Email</label>
                   <input
                     placeholder="Enter your email"
                     required
@@ -91,9 +82,7 @@ export const Form = () => {
                   />
                 </div>
                 <div className="w-full h-full flex items-start justify-center flex-col gap-2">
-                  <label className="w-full text-base text-[#757575]">
-                    Password
-                  </label>
+                  <label className="w-full text-base text-[#757575]">Password</label>
                   <input
                     type="password"
                     required
@@ -106,9 +95,7 @@ export const Form = () => {
                 </div>
               </div>
               <div className="w-full h-full flex items-center justify-start">
-                <button
-                  className="bg-[#162d3a] text-white px-12 rounded-md py-4 border-2 border-transparent hover:border-2 hover:border-[#162d3a] hover:text-[#162d3a] hover:bg-transparent transition-all duration-500 w-full flex items-center justify-center text-base"
-                >
+                <button className="bg-[#162d3a] text-white px-12 rounded-md py-4 border-2 border-transparent hover:border-2 hover:border-[#162d3a] hover:text-[#162d3a] hover:bg-transparent transition-all duration-500 w-full flex items-center justify-center text-base">
                   Sign in
                 </button>
               </div>

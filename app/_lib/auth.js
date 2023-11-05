@@ -18,8 +18,7 @@ export const authOptions=({
       },
       async authorize(credentials) {
         await mongoConnect();
-        console.log("hi")
-        const user =  await mongoose.model('User').findOne({ email: credentials.email});
+        const user =  await mongoose.model('users').findOne({ email: credentials.email});
         if (user && user.password === credentials.password) {
           return user;
         } else {

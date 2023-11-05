@@ -1,43 +1,44 @@
-import Credentials from 'next-auth/providers/credentials';
+import mongoose from "mongoose";
 import GoogleProvider from "next-auth/providers/google";
-import mongoose from 'mongoose';
-export const authOptions = {
-  pages: {
-    signIn: "/",
-  },
+import Credentials from "next-auth/providers/credentials";
+import { mongoConnect } from "./database";
 
-  session: {
-    strategy: "jwt", 
-  },
-
-  secret: process.env.NEXTAUTH_SECRET,
-  
-
+export const authOptions=({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     Credentials({
-      name: 'Credentials',
+      name: "Credentials",
       credentials: {
-        email: { label: 'email', type: 'email' },
-        password: { label: 'Password', type: 'password' },
+        name: { label: "name", type: "text"},
+        email: { label: "email", type: "email" },
+        password: { label: "Password", type: "password" },
       },
-      authorize: async (credentials) => {
-        const user = await mongoose.model('User').findOne({ email: credentials.email });
-
+      async authorize(credentials) {
+        await mongoConnect();
+        console.log("hi")
+        const user =  await mongoose.model('User').findOne({ email: credentials.email});
         if (user && user.password === credentials.password) {
-          return Promise.resolve(user);
+          return user;
         } else {
-          return Promise.resolve(null);
+          return null;
         }
-      },
-    }),
+      }
+    })
   ],
+  secret: process.env.SECRET,
+  pages: {
+    signIn: "/",
+  },
+  session: {
+    strategy: 'jwt',
+  },
   callbacks: {
     async session({ session, token, user }) {
-      session.user.username = session.user.name
+      console.log(session,token)
+      session.user.username = token.name
         .split(" ")
         .join("")
         .toLocaleLowerCase();
@@ -45,5 +46,4 @@ export const authOptions = {
       return session;
     },
   },
-  database: process.env.DATABASE_URL,
-};
+});

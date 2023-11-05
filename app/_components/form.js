@@ -26,6 +26,7 @@ export const Form = () => {
 
       const res = await signIn("credentials", {
         redirect: false,
+        name: formValues.email.split("@")[0],
         email: formValues.email,
         password: formValues.password,
         callbackUrl,

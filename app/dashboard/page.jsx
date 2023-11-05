@@ -1,6 +1,9 @@
 import React from 'react'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '../_lib/auth';
+const page = async () => {
+  const session = await getServerSession(authOptions);
 
-const page = () => {
   return (
     <div>page</div>
   )

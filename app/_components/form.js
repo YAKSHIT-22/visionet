@@ -55,7 +55,7 @@ export const Form = () => {
         <div className="w-full lg:w-[85%] h-full flex items-center justify-center p-0 md:p-4 flex-col gap-[2rem]">
           <div className="w-full flex items-start justify-center flex-col gap-[1rem] select-none">
             <h1 className="w-full font-bold text-4xl lg:text-5xl">Welcome Back!</h1>
-            <p className="w-full font-normal text-lg lg:text-xl">
+            <p className="w-full font-normal text-base lg:text-xl">
               Today is a new day. It's your day. You shape it. Sign in to start managing your
               projects.
             </p>
@@ -101,9 +101,9 @@ export const Form = () => {
               </div>
             </form>
             <div className="w-full h-full gap-[1rem] flex items-center justify-center">
-              <span className="w-12 h-[2px] bg-[#CFDFE2] rounded-full"></span>
+              <span className="w-12 h-[1px] bg-[#CFDFE2] rounded-full"></span>
               <p className="text-base font-light text-[#777777]">or</p>
-              <span className="w-12 h-[2px] bg-[#CFDFE2] rounded-full"></span>
+              <span className="w-12 h-[1px] bg-[#CFDFE2] rounded-full"></span>
             </div>
             <div className="w-full h-full flex items-center justify-center">
               <button
@@ -118,7 +118,7 @@ export const Form = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-[50%] h-full flex items-center justify-center">
+      <div className="w-full md:flex hidden md:w-[50%] h-full items-center justify-center">
         <div className="w-full h-80 sm:h-64 sm:w-full md:w-full md:h-full flex items-center justify-center rounded-3xl overflow-hidden">
           <img
             src={login.src}

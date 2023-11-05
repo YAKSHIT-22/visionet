@@ -15,5 +15,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-var User = mongoose.model("User", UserSchema);
-export default User;
+var User = mongoose.models.User || mongoose.model("User", UserSchema);
+export default  User;
